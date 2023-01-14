@@ -22,11 +22,10 @@ import random
 
 print("forsenL")
 
-#"catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay"
 
 class forsenL(commands.Bot):
     def __init__(self):
-        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="m180bp0wj88928u9z8z6xaftw3kvyn", prefix="^", initial_channels=["rogerxyz", "catsh"])
+        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="m180bp0wj88928u9z8z6xaftw3kvyn", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay"])
 
     async def event_ready(self):
         print(f'Logged in as | {self.nick}')
@@ -35,15 +34,21 @@ class forsenL(commands.Bot):
     async def event_message(self, message):
         if message.echo:
             return
-        elif message.content.find("sigma") == 0:
-            await message.channel.send("EZ")
         tim = str(message.timestamp.year) + ":" + str(message.timestamp.month) + ":" + str(message.timestamp.day) + ":" + str(message.timestamp.hour) + ":" + str(message.timestamp.minute)
         mess = tim + " | " + message.author.display_name + ": " + message.content + " | " + message.channel.name
         print(mess)
         with open("logs.txt", "a", encoding= "utf-8") as forse:
             forse.write("\n"+ mess)
         await self.handle_commands(message)
-
+    
+    async def event_message(self, message):
+        if message.content == ("forsen"):
+            await message.channel.send("forsen")
+        elif message.content.find("sigma") == -1:
+            return
+        else:
+            await message.channel.send("😎 sigma")
+    
     @commands.command()
     async def forsen(self, ctx: commands.Context, fors = None):
         if fors == None:
@@ -51,6 +56,12 @@ class forsenL(commands.Bot):
         else:
             await ctx.send(f'forsen "{fors}"')
 
+    @commands.command(aliases= ["poro", "commands"])
+    async def help(self, ctx: commands.Context):
+        foscommand = []
+        for command in self.commands:
+            foscommand.append(command)
+        await ctx.send(f"{str(foscommand)}")
 
 async def load_cogs():
     for file in os.listdir(f"./cogs"):

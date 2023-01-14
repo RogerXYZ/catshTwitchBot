@@ -13,13 +13,6 @@ class general(commands.Cog):
         else:
             await ctx.send("Tails")
 
-    @commands.command(aliases= ["poro", "commands"])
-    async def help(self, ctx: commands.Context):
-        foscommand = []
-        for command in self.commands:
-            foscommand.append(command)
-        await ctx.send(f"{str(foscommand)}")
-
     @commands.command()
     async def hello(self, ctx: commands.Context):
         await ctx.send(f"Hello {ctx.author.name}!")
