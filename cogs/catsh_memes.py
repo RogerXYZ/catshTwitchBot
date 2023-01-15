@@ -14,7 +14,8 @@ class catsh_memes(commands.Cog):
     async def InGame(self, ctx: commands.Context):
         if ctx.channel.name == "catsh":
             await ctx.send("monkaLaugh this command is not enabled on this channel")
-        await ctx.send(f"@{ctx.author.display_name} you're a black person, in game InGame")
+        else:
+            await ctx.send(f"@{ctx.author.display_name} you're a black person, in game InGame")
 
     @commands.command()
     async def joke(self, ctx: commands.Context):

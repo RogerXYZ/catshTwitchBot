@@ -29,12 +29,12 @@ class allah(commands.Cog):
             maxx = max(forsen, key=forsen.get)
         await ctx.send(f"The most loyal muslim is: {maxx}, with having prayed {forsen[maxx]} times.")
 
-    @commands.command()
+    @commands.command(aliases=["pray_count", "PrayCount", "PrayerCount"])
     async def prayer_count(self, ctx: commands.Context, name = None):
         with open("./prayer.json", "r") as e:
             forsen = json.load(e)
         if name == None:
-            await ctx.send(f"{ctx.message.author.display_name} has prayed {forsen[ctx.message.author.display_name]}")
+            await ctx.send(f"{ctx.message.author.display_name} has prayed {forsen[ctx.message.author.display_name]} time")
         else:
             try:
                 await ctx.send(f"{name} has prayed {forsen[name]}")

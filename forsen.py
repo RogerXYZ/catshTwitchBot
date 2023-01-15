@@ -25,7 +25,7 @@ print("forsenL")
 
 class forsenL(commands.Bot):
     def __init__(self):
-        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="m180bp0wj88928u9z8z6xaftw3kvyn", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay", "HoldingKeys", "DheiddE", "Gerg"])
+        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="3thcz3pte5d7pft8kxckl190rs3gs6", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay", "HoldingKeys", "DheiddE", "Gerg"])
 
     async def event_ready(self):
         print(f'Logged in as | {self.nick}')
