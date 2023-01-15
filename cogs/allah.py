@@ -34,7 +34,7 @@ class allah(commands.Cog):
         with open("./prayer.json", "r") as e:
             forsen = json.load(e)
         if name == None:
-            await ctx.send(f"{ctx.message.author.display_name} has prayed {forsen[ctx.message.author.display_name]} time")
+            await ctx.send(f"{ctx.message.author.display_name} has prayed {forsen[ctx.message.author.display_name]} time(s)")
         else:
             try:
                 await ctx.send(f"{name} has prayed {forsen[name]}")
