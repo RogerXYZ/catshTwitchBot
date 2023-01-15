@@ -7,7 +7,7 @@ CCU Stock API
 Chess API
 NSFW commands
 Tik Tac Toe
-
+Dictionary API for word definitions ^query
 
 """
 
@@ -25,29 +25,30 @@ print("forsenL")
 
 class forsenL(commands.Bot):
     def __init__(self):
-        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="m180bp0wj88928u9z8z6xaftw3kvyn", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay"])
+        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="m180bp0wj88928u9z8z6xaftw3kvyn", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay", "HoldingKeys", "DheiddE", "Gerg"])
 
     async def event_ready(self):
         print(f'Logged in as | {self.nick}')
         print(f'User id is | {self.user_id}')
 
     async def event_message(self, message):
+#        forseee = message.content.find("https://")
         if message.echo:
             return
+        elif message.content == ("forsen"):
+            await message.channel.send("forsen")
+        elif message.content == ("sigma"):
+            await message.channel.send("sigma")
+#        elif forseee != -1:
+#            if message.channel.name == "rogerxyz":
+#                with open("nsfw.txt", "a") as l:
+#                    l.write("\n" + message.content[forseee:-1])
         tim = str(message.timestamp.year) + ":" + str(message.timestamp.month) + ":" + str(message.timestamp.day) + ":" + str(message.timestamp.hour) + ":" + str(message.timestamp.minute)
         mess = tim + " | " + message.author.display_name + ": " + message.content + " | " + message.channel.name
         print(mess)
         with open("logs.txt", "a", encoding= "utf-8") as forse:
             forse.write("\n"+ mess)
         await self.handle_commands(message)
-    
-    async def event_message(self, message):
-        if message.content == ("forsen"):
-            await message.channel.send("forsen")
-        elif message.content.find("sigma") == -1:
-            return
-        else:
-            await message.channel.send("😎 sigma")
     
     @commands.command()
     async def forsen(self, ctx: commands.Context, fors = None):

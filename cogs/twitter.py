@@ -72,8 +72,11 @@ class twitter(commands.Cog):
                 poggies.append(forsen)
         ran = random.randint(0,(len(poggies)-1))
         print(poggies)
-        await ctx.send(f"{ctx.author.display_name}, {poggies[ran]}")
+        await ctx.send(f"{ctx.author.display_name}, (warning nsfw) {poggies[ran]}")
         """
-        await ctx.send("This command is under development, please be patient Okayeg")
+        with open("nsfw.txt", "r") as d:
+            links = d.readlines()
+        ran = random.randint(0,(len(links)-1))
+        await ctx.send(f"{ctx.author.display_name}, (warning nsfw) {links[ran]}")
 def prepare(forsenL: commands.Bot):
     forsenL.add_cog(twitter(forsenL))
