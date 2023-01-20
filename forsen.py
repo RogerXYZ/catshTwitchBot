@@ -8,7 +8,8 @@ Chess API
 NSFW commands
 Tik Tac Toe
 Dictionary API for word definitions ^query
-
+!play shit
+discord/markov shti
 """
 
 
@@ -22,7 +23,6 @@ import random
 
 print("forsenL")
 
-
 class forsenL(commands.Bot):
     def __init__(self):
         super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="3thcz3pte5d7pft8kxckl190rs3gs6", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay", "HoldingKeys", "DheiddE", "Gerg"])
@@ -33,7 +33,10 @@ class forsenL(commands.Bot):
 
     async def event_message(self, message):
 #        forseee = message.content.find("https://")
+        offline_only = ["minusinsanity"]
         if message.echo:
+            return
+        elif offline_only.count(message.channel.name) == -1:
             return
         elif message.content == ("forsen"):
             await message.channel.send("forsen")

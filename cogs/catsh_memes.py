@@ -36,6 +36,11 @@ class catsh_memes(commands.Cog):
     async def vibE(self, ctx: commands.Context):
         await ctx.send(f"I want to break freee vibE https://youtu.be/WUOtCLOXgm8")
 
+    @commands.command()
+    async def catsh(self, ctx: commands.Context):
+        await ctx.send(f"BANNED LULE")
+
+
     @commands.command(aliases= ["CCU", "about"])
     async def ccu(self, ctx: commands.Context):
         await ctx.send(f"The Catsh Cinematic Universe or Catsh Cuck Universe is an organization of content creators who work together in order to create catsh related content.")
