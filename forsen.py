@@ -5,11 +5,9 @@ Database for Logs
 Artifact and CCU related commands
 CCU Stock API
 Chess API
-NSFW commands
 Tik Tac Toe
 Dictionary API for word definitions ^query
-!play shit
-discord/markov shti
+discord/markov api
 """
 
 
@@ -25,14 +23,13 @@ print("forsenL")
 
 class forsenL(commands.Bot):
     def __init__(self):
-        super().__init__(client_secret="e6yxm8mlnqxjpg3mydplg1blgqxfze", token="3thcz3pte5d7pft8kxckl190rs3gs6", prefix="^", initial_channels=["catsh", "rogerxyz", "redniii", "alastorkunn", "MayoAioli", "pambaulettox", "metser", "SaraTimberlain", "yosharpi", "MinusInsanity", "EddieHD_", "NaMTheWeebs", "alecbirdman", "FilunovicU", "swyfty_", "arozay", "HoldingKeys", "DheiddE", "Gerg"])
+        super().__init__(client_secret="[insert clien_secret]", token="[insert token]", prefix="^", initial_channels=["catsh"])
 
     async def event_ready(self):
         print(f'Logged in as | {self.nick}')
         print(f'User id is | {self.user_id}')
 
     async def event_message(self, message):
-#        forseee = message.content.find("https://")
         offline_only = ["minusinsanity"]
         if message.echo:
             return
@@ -42,10 +39,6 @@ class forsenL(commands.Bot):
             await message.channel.send("forsen")
         elif message.content == ("sigma"):
             await message.channel.send("sigma")
-#        elif forseee != -1:
-#            if message.channel.name == "rogerxyz":
-#                with open("nsfw.txt", "a") as l:
-#                    l.write("\n" + message.content[forseee:-1])
         tim = str(message.timestamp.year) + ":" + str(message.timestamp.month) + ":" + str(message.timestamp.day) + ":" + str(message.timestamp.hour) + ":" + str(message.timestamp.minute)
         mess = tim + " | " + message.author.display_name + ": " + message.content + " | " + message.channel.name
         print(mess)
