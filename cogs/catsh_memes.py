@@ -10,13 +10,6 @@ class catsh_memes(commands.Cog):
     async def catsh_meme(self, ctx: commands.Context):
         await ctx.send("This command is under development, please be patient Okayeg")
 
-    @commands.command(aliases= ["ingame", "Ingame"])
-    async def InGame(self, ctx: commands.Context):
-        if ctx.channel.name == "catsh":
-            await ctx.send("monkaLaugh this command is not enabled on this channel")
-        else:
-            await ctx.send(f"@{ctx.author.display_name} you're a black person, in game InGame")
-
     @commands.command()
     async def joke(self, ctx: commands.Context):
         ran = random.randint(0,(len(self.joke_list)-1))
